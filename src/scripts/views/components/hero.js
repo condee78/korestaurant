@@ -1,5 +1,6 @@
 class Hero extends HTMLElement {
-  connectedCallback() {
+  constructor() {
+    super();
     this.render();
   }
 

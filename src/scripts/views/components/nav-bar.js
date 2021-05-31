@@ -1,19 +1,16 @@
 class NavBar extends HTMLElement {
   constructor() {
     super();
-  }
-
-  connectedCallback() {
     this.render();
   }
 
   render() {
     const itemNavigation = `
         <li class="nav-item">
-            <a href="index.html" class="nav-link">Home</a>
+            <a href="#" class="nav-link">Home</a>
         </li>
         <li class="nav-item">
-            <a href="#" class="nav-link">Favorite</a>
+            <a href="#/favorite" class="nav-link">Favorite</a>
         </li>
         <li class="nav-item">
             <a href="https://www.instagram.com/aziesland/" class="nav-link" target="_blank">About</a>
@@ -22,10 +19,10 @@ class NavBar extends HTMLElement {
 
     const itemSideNavigation = `
         <li class="sidenav-item">
-          <a href="index.html" class="sidenav-link">Home</a>
+          <a href="#" class="sidenav-link">Home</a>
         </li>
         <li class="sidenav-item">
-          <a href="#" class="sidenav-link">Favorite</a>
+          <a href="#/favorite" class="sidenav-link">Favorite</a>
         </li>
         <li class="sidenav-item">
           <a href="https://www.instagram.com/aziesland/" class="nav-link" target="_blank">About</a>
