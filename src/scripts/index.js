@@ -1,14 +1,19 @@
 import "regenerator-runtime"; /* for async await transpile */
 import "../styles/main.css";
 import "../styles/main-responsive.css";
-import "./views/components/nav-bar";
-import "./views/components/hero";
-import "./views/components/resto-list";
 
-import NavigationDrawer from "./utils/navigation-drawer";
+import App from "./views/app";
 
-NavigationDrawer.init({
+const app = new App({
   drawer: document.querySelector(".sidenav"),
   hamburgerMenu: document.querySelector("#menu"),
   mainContent: document.querySelector("#main-content"),
+});
+
+window.addEventListener("hashchange", () => {
+  app.renderPage();
+});
+
+window.addEventListener("load", () => {
+  app.renderPage();
 });
