@@ -1,13 +1,6 @@
 import "./resto-item";
-import restoDataSample from "../../../DATA.json";
 
 class RestoList extends HTMLElement {
-  constructor() {
-    super();
-    this._data = restoDataSample.restaurants;
-    this.render();
-  }
-
   set value(data) {
     this._data = data;
     this.render();
