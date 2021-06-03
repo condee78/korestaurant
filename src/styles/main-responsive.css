@@ -61,10 +61,49 @@
   resto-list {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .menu-list {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
 
 @media screen and (min-width: 1200px) {
   resto-list {
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  resto-detail {
+    grid-template-columns: 1fr 1fr;
+    margin: 0 auto;
+    margin-top: 20px;
+    grid-column-gap: 30px;
+    grid-template-areas:
+      "titles titles"
+      "abouts insights"
+      "menus insights"
+      "reviews reviews";
+  }
+  .detail-resto-titles {
+    grid-area: titles;
+  }
+  .detail-resto-abouts {
+    grid-area: abouts;
+  }
+  .detail-resto-insights {
+    grid-area: insights;
+  }
+  .detail-resto-menus {
+    grid-area: menus;
+  }
+  .detail-resto-reviews {
+    grid-area: reviews;
+  }
+
+  .detail-insight-group {
+    padding: 50px 70px;
+  }
+
+  .menu-list {
+    grid-template-columns: 1fr 1fr;
   }
 }
