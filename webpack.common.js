@@ -1,5 +1,7 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
+const ServiceWorkerWebpackPlugin = require("serviceworker-webpack-plugin");
+const WebpackPwaManifest = require("webpack-pwa-manifest");
 const path = require("path");
 
 module.exports = {
@@ -45,6 +47,43 @@ module.exports = {
         {
           from: path.resolve(__dirname, "src/public/"),
           to: path.resolve(__dirname, "dist/"),
+        },
+      ],
+    }),
+    new ServiceWorkerWebpackPlugin({
+      entry: path.resolve(__dirname, "src/scripts/sw.js"),
+    }),
+    new WebpackPwaManifest({
+      name: "Korestaurant",
+      short_name: "Koresto",
+      filename: "manifest.json",
+      description: "Aplikasi PWA Restaurants",
+      start_url: "index.html",
+      display: "standalone",
+      background_color: "#152c5b",
+      theme_color: "#152c5b",
+      ios: true,
+      crossorigin: "use-credentials", // can be null, use-credentials or anonymous
+      icons: [
+        {
+          src: path.resolve("src/public/images/icons/icon.png"),
+          sizes: [72, 96, 128, 144, 152, 192, 384, 512],
+          type: "image/png",
+          purpose: "any",
+          destination: "icons",
+        },
+        {
+          src: path.resolve("src/public/images/icons/maskable/icon.png"),
+          sizes: [72, 96, 128, 144, 152, 192, 384, 512],
+          type: "image/png",
+          purpose: "maskable",
+          destination: "icons/maskable",
+        },
+        {
+          src: path.resolve("src/public/images/icons/icon.png"),
+          sizes: [120, 152, 167, 180, 192],
+          purpose: "maskable",
+          destination: "icons/ios",
         },
       ],
     }),
