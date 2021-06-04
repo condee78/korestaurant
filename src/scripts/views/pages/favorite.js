@@ -1,5 +1,7 @@
 import FavoriteRestaurantIdb from "../../data/favorite-resto-idb";
 
+import "../components/favorite-empty";
+
 const Favorite = {
   async render() {
     return `
@@ -21,8 +23,7 @@ const Favorite = {
       restoListElement.value = listRestaurant;
     } else {
       document.querySelector(".content-subtitle").innerHTML =
-        "Kamu belum punya Tim Favorite!";
-      console.log(document.querySelector(".content-subtitle"));
+        "<favorite-empty></favorite-empty>";
     }
   },
 };
