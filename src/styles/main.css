@@ -49,6 +49,12 @@ nav {
   -moz-box-shadow: 0 1px 1px rgba(50, 50, 50, 0.1);
   box-shadow: 0 1px 1px rgba(50, 50, 50, 0.1);
 }
+.navbar-fixed {
+  position: fixed;
+  top: 0;
+  background-color: #ffffff;
+  z-index: 99;
+}
 
 .nav-logo {
   font-size: 2rem;
@@ -114,15 +120,19 @@ nav {
   font-weight: 200;
 }
 
+main {
+  margin-top: 100px;
+}
+
 .container {
   width: 80%;
-  margin: 0 auto;
+  margin: 20px auto;
   padding: 0;
 }
 
 .content {
   width: 100%;
-  min-height: 1vh;
+  min-height: 75vh;
 }
 
 .content-title {

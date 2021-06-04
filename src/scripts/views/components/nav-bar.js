@@ -30,7 +30,7 @@ class NavBar extends HTMLElement {
     `;
 
     this.innerHTML = `
-    <nav>
+    <nav class="navbar-fixed">
         <h1 class="nav-logo">Koresto</h1>
         
         <ul class="nav-list">
