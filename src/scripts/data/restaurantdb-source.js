@@ -24,7 +24,7 @@ class RestaurantDbSource {
       body: data,
     });
     const responseJson = await response.json();
-    return responseJson.results;
+    return responseJson;
   }
 }
 

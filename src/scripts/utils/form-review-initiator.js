@@ -1,36 +1,11 @@
 import RestaurantDbSource from "../data/restaurantdb-source";
 
-const ReviewFormInitiator = {
+const FormReviewInitiator = {
   init({ form, elementResult }) {
-    this._elementResult = elementResult;
     form.addEventListener("submit", (event) => {
       event.preventDefault();
-      this._dataInputValidation(form);
+      this._dataInputValidation(form, elementResult);
     });
-  },
-
-  _dataInputValidation(form) {
-    const data = this._setDataForm(form);
-    const error = {
-      status: false,
-      keys: [],
-    };
-
-    /* todo for validation
-    for (const key in data) {
-      if (data[key] === "") {
-        error.status = true;
-        error.keys.push(key);
-      }
-    } */
-
-    if (error.status === false) {
-      this._addReview({
-        data: JSON.stringify(data),
-      });
-    } else {
-      this._failedHandler(error);
-    }
   },
 
   _setDataForm(form) {
@@ -42,24 +17,50 @@ const ReviewFormInitiator = {
     return dataForm;
   },
 
-  async _addReview(data, elementResult) {
-    try {
-      const responseAddReview = await RestaurantDbSource.addReviewRestaurant(
-        data
-      );
-      this._successHandler(responseAddReview, elementResult);
-    } catch (error) {
-      this._failedHandler(error.message, elementResult);
+  _dataInputValidation(form, elementResult) {
+    const data = this._setDataForm(form);
+    const error = {
+      status: false,
+      keys: [],
+    };
+
+    for (const key in data) {
+      if (data[key] === "") {
+        error.status = true;
+        error.keys.push(key);
+      }
+    }
+
+    if (error.status === false) {
+      this._addReview({
+        data: JSON.stringify(data),
+        elementResult,
+      });
+    } else {
+      this._failedHandler(error, elementResult);
     }
   },
 
-  _successHandler(response) {
-    this._elementResult.innerText = response.message;
+  _successHandler(response, elementResult) {
+    // eslint-disable-next-line no-param-reassign
+    elementResult.innerHTML = `<p>${response.message} to add a review</p>`;
   },
 
-  _failedHandler(error) {
-    this._elementResult.innerText = error.message;
+  _failedHandler(error, elementResult) {
+    error.keys.forEach((key) => {
+      // eslint-disable-next-line no-param-reassign
+      elementResult.innerHTML = `<p>${key} cannot empty!</p>`;
+    });
+  },
+
+  async _addReview({ data, elementResult }) {
+    try {
+      const response = await RestaurantDbSource.addReviewRestaurant(data);
+      this._successHandler(response, elementResult);
+    } catch (err) {
+      this._failedHandler(err);
+    }
   },
 };
 
-export default ReviewFormInitiator;
+export default FormReviewInitiator;

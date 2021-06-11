@@ -135,6 +135,7 @@ class RestoDetail extends HTMLElement {
       )
       .join("")}
     </div>
+  
     <div class="review-form-group">
     <h3 class="detail-article">Make a Review Now!</h3>
     <form class="review-form" id="review-form">
