@@ -5,7 +5,6 @@ class RestoInsight extends HTMLElement {
   }
 
   render() {
-    console.log("test", this._data);
     this.innerHTML = `
     <div class="title">
         <ul class="menu-list">
