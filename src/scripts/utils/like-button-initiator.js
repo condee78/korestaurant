@@ -16,10 +16,8 @@ const LikeButtonInitiator = {
     const { id } = restaurant;
 
     if (await this._restaurantExist(id)) {
-      console.log("exist bro");
       this._renderLiked();
     } else {
-      console.log("gk ada bro");
       this._renderLike();
     }
   },
@@ -36,8 +34,6 @@ const LikeButtonInitiator = {
     likeButton.addEventListener("click", async () => {
       FavoriteRestaurantIdb.deleteRestaurant(this._restaurant.id);
       this._renderButton(this._restaurant);
-      // this._notifContainer.innerHTML = createRemoveFavoriteNotif.show();
-      // createRemoveFavoriteNotif.remove();
     });
   },
 
@@ -48,8 +44,6 @@ const LikeButtonInitiator = {
     likeButton.addEventListener("click", async () => {
       FavoriteRestaurantIdb.putRestaurant(this._restaurant);
       this._renderButton(this._restaurant);
-      // this._notifContainer.innerHTML = createSuccesFavoriteNotif.show();
-      // createSuccesFavoriteNotif.remove();
     });
   },
 };

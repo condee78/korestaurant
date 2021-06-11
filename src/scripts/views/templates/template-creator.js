@@ -1,5 +1,3 @@
-import CONFIG from "../../globals/config";
-
 const createLikeButtonTemplate = () => `
 <button aria-label="like this resto" id="likeButton" class="like">
    <i class="far fa-heart" aria-hidden="true"></i>
@@ -12,9 +10,4 @@ const createLikedButtonTemplate = () => `
 </button>
 `;
 
-export {
-  // createMovieItemTemplate,
-  // createMovieDetailTemplate,
-  createLikeButtonTemplate,
-  createLikedButtonTemplate,
-};
+export { createLikeButtonTemplate, createLikedButtonTemplate };
