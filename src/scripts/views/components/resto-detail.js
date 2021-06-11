@@ -1,11 +1,20 @@
 import CONFIG from "../../globals/config";
 import LikeButtonInitiator from "../../utils/like-button-initiator";
+import FormReviewInitiator from "../../utils/form-review-initiator";
 
 class RestoDetail extends HTMLElement {
   set value(data) {
     this._data = data;
     this.render();
     this._likeButtonInitiator();
+    this._formReviewInitiator();
+  }
+
+  async _likeButtonInitiator() {
+    await LikeButtonInitiator.init({
+      likeButtonContainer: document.querySelector("#likeButtonContainer"),
+      restaurant: this._data,
+    });
   }
 
   _generateIconRating() {
@@ -17,10 +26,10 @@ class RestoDetail extends HTMLElement {
     return rating;
   }
 
-  async _likeButtonInitiator() {
-    await LikeButtonInitiator.init({
-      likeButtonContainer: document.querySelector("#likeButtonContainer"),
-      restaurant: this._data,
+  _formReviewInitiator() {
+    FormReviewInitiator.init({
+      form: this.querySelector("#review-form"),
+      elementResult: this.querySelector("#response-result"),
     });
   }
 
@@ -125,6 +134,22 @@ class RestoDetail extends HTMLElement {
         `
       )
       .join("")}
+    </div>
+    <div class="review-form-group">
+    <h3 class="detail-article">Make a Review Now!</h3>
+    <form class="review-form" id="review-form">
+        <input type="hidden" name="id" value="${this._data.id}">
+        <div class="review-form-input">
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" autocomplete="off">
+        </div>
+        <div class="review-form-input">
+            <label for="review">Review</label>
+            <textarea name="review" id="review"></textarea>
+        </div>
+        <button type="submit" id="button-review">Add Review</button>
+        <div id="response-result" class="response-result"></div>
+    </form>
     </div>
     </article>
             `;

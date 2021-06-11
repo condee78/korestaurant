@@ -55,6 +55,10 @@
   resto-list {
     grid-template-columns: repeat(1, 1fr);
   }
+
+  .review-form-group {
+    width: 60%;
+  }
 }
 
 @media screen and (min-width: 750px) {
@@ -64,6 +68,10 @@
 
   .menu-list {
     grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .review-form-group {
+    width: 60%;
   }
 }
 
@@ -105,5 +113,9 @@
 
   .menu-list {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .review-form-group {
+    width: 70%;
   }
 }
