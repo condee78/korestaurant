@@ -10,4 +10,21 @@ const createLikedButtonTemplate = () => `
 </button>
 `;
 
-export { createLikeButtonTemplate, createLikedButtonTemplate };
+const pageNotFoundTemplate = () => `
+<div class="container">
+  <section class="content" id="content">
+    <h2 class="content-title">Sorry, Page Not Found!</h2>
+    <p class="content-subtitle">
+      <div class="content-items" id="content-items">
+      You can go to <a href="#" >Home</a> to find other interesting Restaurants.
+      </div>
+    </p>
+  </section>
+</div>
+`;
+
+export {
+  createLikeButtonTemplate,
+  createLikedButtonTemplate,
+  pageNotFoundTemplate,
+};

@@ -13,7 +13,7 @@ class NavBar extends HTMLElement {
             <a href="#/favorite" class="nav-link">Favorite</a>
         </li>
         <li class="nav-item">
-            <a href="https://www.instagram.com/aziesland/" class="nav-link" target="_blank">About</a>
+            <a href="https://www.instagram.com/aziesland/" class="nav-link" target="_blank" rel="noreferrer">About</a>
         </li>
     `;
 
