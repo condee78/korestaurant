@@ -2,7 +2,7 @@ import RestaurantDbSource from "../../data/restaurantdb-source";
 import UrlParser from "../../routes/url-parser";
 
 import "../components/resto-detail";
-import { createLikeButtonTemplate } from "../templates/template-creator";
+import { createLikeRestaurantButtonTemplate } from "../templates/template-creator";
 
 const DetailResto = {
   async render() {
@@ -20,7 +20,7 @@ const DetailResto = {
     detailRestaurantElement.value = detailRestaurant;
 
     const likeButtonContainer = document.querySelector("#likeButtonContainer");
-    likeButtonContainer.innerHTML = createLikeButtonTemplate();
+    likeButtonContainer.innerHTML = createLikeRestaurantButtonTemplate();
   },
 };
 

@@ -1,17 +1,17 @@
 import CONFIG from "../../globals/config";
-import LikeButtonInitiator from "../../utils/like-button-initiator";
+import LikeButtonPresenter from "../../utils/like-button-presenter";
 import FormReviewInitiator from "../../utils/form-review-initiator";
 
 class RestoDetail extends HTMLElement {
   set value(data) {
     this._data = data;
     this.render();
-    this._likeButtonInitiator();
+    this._likeButtonPresenter();
     this._formReviewInitiator();
   }
 
-  async _likeButtonInitiator() {
-    await LikeButtonInitiator.init({
+  async _likeButtonPresenter() {
+    await LikeButtonPresenter.init({
       likeButtonContainer: document.querySelector("#likeButtonContainer"),
       restaurant: this._data,
     });
