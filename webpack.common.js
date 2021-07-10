@@ -3,6 +3,9 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 const ServiceWorkerWebpackPlugin = require("serviceworker-webpack-plugin");
 const WebpackPwaManifest = require("webpack-pwa-manifest");
 const path = require("path");
+const ImageminWebpackPlugin = require("imagemin-webpack-plugin").default;
+const ImageminMozjpeg = require("imagemin-mozjpeg");
+const imageminPngquant = require("imagemin-pngquant");
 
 module.exports = {
   entry: path.resolve(__dirname, "src/scripts/index.js"),
@@ -48,6 +51,15 @@ module.exports = {
           from: path.resolve(__dirname, "src/public/"),
           to: path.resolve(__dirname, "dist/"),
         },
+      ],
+    }),
+    new ImageminWebpackPlugin({
+      plugins: [
+        imageminPngquant(),
+        ImageminMozjpeg({
+          quality: 50,
+          progressive: true,
+        }),
       ],
     }),
     new ServiceWorkerWebpackPlugin({
