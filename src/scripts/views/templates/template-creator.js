@@ -23,8 +23,29 @@ const pageNotFoundTemplate = () => `
 </div>
 `;
 
+const createSkeletonRestoTemplate = (count) => {
+  let template = "";
+
+  for (let i = 0; i < count; i += 1) {
+    template += `
+      <article class="resto-item">
+        <div class="resto-item-image">
+            <img src="./images/placeholder.png" alt="skeleton" class="resto-item-thumbnail" >
+        </div>
+          <div class="resto-item-content">
+              <h3 class="skeleton">Lorem ipsum dolor sit amet</h3>
+              <p class="skeleton">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A adipisci alias 
+              aspernatur, assumenda aut consectetur consequuntur debitis deleniti </p>
+          </div>
+      </article>
+  `;
+  }
+  return template;
+};
+
 export {
   createLikeRestaurantButtonTemplate,
   createUnlikeRestaurantButtonTemplate,
   pageNotFoundTemplate,
+  createSkeletonRestoTemplate,
 };

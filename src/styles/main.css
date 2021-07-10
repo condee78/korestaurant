@@ -428,3 +428,9 @@ footer {
   -moz-box-shadow: 0 -1px 1px 0 rgba(50, 50, 50, 0.1);
   box-shadow: 0 -1px 1px 0 rgba(50, 50, 50, 0.1);
 }
+
+.skeleton {
+  user-select: none;
+  background-color: #eeeeee;
+  color: #eeeeee;
+}
