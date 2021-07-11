@@ -88,7 +88,8 @@ nav {
   justify-items: center;
   width: 100%;
   min-height: 500px;
-  background: #353535 url("../public/images/heros/hero-image_4.jpg") no-repeat;
+  background: #353535 url("../public/hero-image/hero-image_4-large.jpg")
+    no-repeat;
   background-size: cover;
   position: relative;
 }

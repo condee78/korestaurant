@@ -41,6 +41,11 @@
     padding: 15px;
   }
 
+  .hero {
+    background: #353535 url("../public/hero-image/hero-image_4-small.jpg")
+      no-repeat;
+  }
+
   .open {
     transform: translate(0, 0);
     transition: transform 0.5s;

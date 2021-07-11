@@ -34,7 +34,8 @@ module.exports = {
             loader: "file-loader",
             options: {
               name: "[name].[ext]", // <-- retain original file name
-              outputPath: path.build,
+              outputPath: "hero-image",
+              publicPath: "hero-image",
             },
           },
         ],
@@ -52,6 +53,9 @@ module.exports = {
         {
           from: path.resolve(__dirname, "src/public/"),
           to: path.resolve(__dirname, "dist/"),
+          globOptions: {
+            ignore: ["**/images/heros/**"], // CopyWebpackPlugin mengabaikan berkas yang berada di dalam folder images
+          },
         },
       ],
     }),
