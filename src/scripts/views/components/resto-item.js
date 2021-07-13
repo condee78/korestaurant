@@ -14,7 +14,7 @@ class RestoItem extends HTMLElement {
                   CONFIG.BASE_IMAGE_URL("small") + this._data.pictureId
                 }" alt="${
       this._data.name
-    }" class="lazyload resto-item-thumbnail">
+    }" class="lazyload resto-item-thumbnail" height="250px">
                   <div class="resto-item-tag">
                     <div class="resto-item-city">
                       ${this._data.city}

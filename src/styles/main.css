@@ -11,11 +11,10 @@
 }
 * {
   box-sizing: border-box;
-}
-
-body,
-html {
-  height: 100%;
+  /*
+  padding: 0;
+  margin: 0;
+  */
 }
 
 body {
@@ -26,6 +25,11 @@ body {
   margin: 0;
   padding: 0;
   color: #454545;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
 }
 
 .skip-to-content {
@@ -117,11 +121,15 @@ nav {
   font-weight: 200;
 }
 
+main {
+  flex: 1;
+}
+
 .container {
   width: 80%;
   margin: 20px auto;
   padding: 0;
-  min-height: 75vh;
+  min-height: 100%;
 }
 
 .content {
@@ -422,12 +430,20 @@ resto-detail aside {
 }
 
 footer {
-  height: 60px;
-  padding: 20px;
-  text-align: center;
+  margin: 0;
+  padding: 0;
   -webkit-box-shadow: 0 -1px 1px 0 rgba(50, 50, 50, 0.1);
   -moz-box-shadow: 0 -1px 1px 0 rgba(50, 50, 50, 0.1);
   box-shadow: 0 -1px 1px 0 rgba(50, 50, 50, 0.1);
+}
+
+footer p {
+  text-align: center;
+}
+
+footer p a {
+  color: #db0000;
+  text-decoration: none;
 }
 
 .skeleton {

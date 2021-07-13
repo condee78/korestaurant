@@ -34,8 +34,9 @@ const createSkeletonRestoTemplate = (count) => {
         </div>
           <div class="resto-item-content">
               <h3 class="skeleton">Lorem ipsum dolor sit amet</h3>
-              <p class="skeleton">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A adipisci alias 
-              aspernatur, assumenda aut consectetur consequuntur debitis deleniti </p>
+              <p class="skeleton">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A adipisci alias aspernatur, 
+              assumenda aut consectetur consequuntur debitis deleniti dicta dolorem dolorum eos exercitatio</p>
+              <span class="skeleton">Lorem ipsum</span>
           </div>
       </article>
   `;
