@@ -10,7 +10,7 @@ class RestoItem extends HTMLElement {
     this.innerHTML = `
             <article class="resto-item">
             <div class="resto-item-image">
-                <img src="${
+                <img data-src="${
                   CONFIG.BASE_IMAGE_URL("small") + this._data.pictureId
                 }" alt="${
       this._data.name

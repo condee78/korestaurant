@@ -1,6 +1,7 @@
 import CONFIG from "../../globals/config";
 import LikeButtonPresenter from "../../utils/like-button-presenter";
 import FormReviewInitiator from "../../utils/form-review-initiator";
+import imagePlaceholder from "../../../public/images/placeholder.png";
 
 class RestoDetail extends HTMLElement {
   set value(data) {
@@ -97,9 +98,9 @@ class RestoDetail extends HTMLElement {
       this._data.city
     }</p>
         <div>
-        <img src="${
-          CONFIG.BASE_IMAGE_URL("large") + this._data.pictureId
-        }" alt="${this._data.name}"  class="detail-image-header"></src>
+        <img src="${imagePlaceholder}" data-src="${
+      CONFIG.BASE_IMAGE_URL("large") + this._data.pictureId
+    }" alt="${this._data.name}"  class="lazyload detail-image-header"></src>
         </div>
     </section>
     <article class="detail-resto-abouts">
