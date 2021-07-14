@@ -25,7 +25,7 @@ body {
   margin: 0;
   padding: 0;
   color: #454545;
-  /* min-height: 100vh;*/
+  min-height: 800px;
   display: flex;
   flex-direction: column;
 }
@@ -174,7 +174,7 @@ resto-list a {
 
 .resto-item-image {
   width: 100%;
-  height: auto;
+  height: 250px;
   position: relative;
 }
 

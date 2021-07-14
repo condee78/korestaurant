@@ -1,6 +1,6 @@
 @media screen and (max-width: 480px) {
   body {
-    min-height: 2000px;
+    min-height: 800px;
   }
 
   .nav-logo {
@@ -62,7 +62,7 @@
 
 @media screen and (min-width: 680px) {
   body {
-    min-height: 1000px;
+    min-height: 800px;
   }
 
   resto-list {
@@ -76,7 +76,7 @@
 
 @media screen and (min-width: 750px) {
   body {
-    min-height: 1000px;
+    min-height: 800px;
   }
   resto-list {
     grid-template-columns: repeat(2, 1fr);
@@ -93,7 +93,7 @@
 
 @media screen and (min-width: 1200px) {
   body {
-    min-height: 1000px;
+    min-height: 800px;
   }
 
   resto-list {
