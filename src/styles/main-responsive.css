@@ -47,6 +47,7 @@
 
   .hero {
     background: #353535 url("../hero-image/hero-image_4-small.jpg") no-repeat;
+    background-size: cover;
   }
 
   .open {
