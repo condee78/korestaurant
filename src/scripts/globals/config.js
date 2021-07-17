@@ -4,7 +4,7 @@ const CONFIG = {
   BASE_IMAGE_URL: (size) =>
     `https://dicoding-restaurant-api.el.r.appspot.com/images/${size}/`,
   DEFAULT_LANGUAGE: "en-us",
-  CACHE_NAME: new Date().toISOString(),
+  CACHE_NAME: `KorestoApp-V1`,
   DATABASE_NAME: "koresto-database",
   DATABASE_VERSION: 1,
   OBJECT_STORE_NAME: "resto",
