@@ -57,6 +57,10 @@
   resto-list {
     grid-template-columns: repeat(1, 1fr);
   }
+
+  .detail-menu {
+    width: 100%;
+  }
 }
 
 @media screen and (min-width: 680px) {

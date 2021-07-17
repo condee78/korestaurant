@@ -125,7 +125,7 @@ main {
 }
 
 .container {
-  width: 80%;
+  width: 85%;
   margin: 20px auto 0 auto;
   padding: 0;
   min-height: 100%;
@@ -275,10 +275,13 @@ resto-detail aside {
   grid-area: insight-header;
   color: var(--secondary-text-color);
   font-size: 0.9rem;
+  justify-self: center;
 }
 .insight-value {
   grid-area: insight-value;
   font-weight: 500;
+  justify-self: center;
+  font-size: 0.9rem;
 }
 
 .detail-menu {
@@ -318,6 +321,7 @@ resto-detail aside {
 .insight-list,
 .insight-list-value {
   list-style: none;
+  padding: 0;
 }
 
 .review-group {
