@@ -65,32 +65,6 @@ class RestoDetail extends HTMLElement {
                 </div>
                 `;
 
-    const insight = `
-    <div class="detail-insight-group">
-    <h3 class="detail-article-title insight-title">Resto Insight</h3>
-    <div class="insight-header">    
-    <ul class="insight-list">
-        <li>Rating</li>
-        <li>Customers</li>
-        <li>Categories</li>
-        <li>City</li>
-    </ul>
-    </div>
-    <div class="insight-value">
-        <ul class="insight-list-value">  
-            <li>
-            ${this._generateIconRating()
-              .map((item) => item)
-              .join("")}
-            </li>
-            <li>${this._data.customerReviews.length} review(s)</li>
-            <li>${this._data.categories.map((category) => category.name)}</li>
-            <li>${this._data.city}</li>
-        </ul>
-    </div>
-    </div>
-    `;
-
     this.innerHTML = `
     <section class="content detail-resto-titles" id="content">
         <h2 class="content-title">${this._data.name}</h2>
@@ -108,7 +82,31 @@ class RestoDetail extends HTMLElement {
         <p class="detail-article-description">${this._data.description}</p>
     </article>
     <aside class="detail-resto-insights">
-            ${insight}
+      <div class="detail-insight-group">
+        <h3 class="detail-article-title insight-title">Resto Insight</h3>
+        <div class="insight-header">    
+        <ul class="insight-list">
+            <li>Rating</li>
+            <li>Customers</li>
+            <li>Categories</li>
+            <li>City</li>
+        </ul>
+        </div>
+        <div class="insight-value">
+            <ul class="insight-list-value">  
+                <li>
+                ${this._generateIconRating()
+                  .map((item) => item)
+                  .join("")}
+                </li>
+                <li>${this._data.customerReviews.length} review(s)</li>
+                <li>${this._data.categories.map(
+                  (category) => category.name
+                )}</li>
+                <li>${this._data.city}</li>
+            </ul>
+        </div>
+      </div>
     </aside>
     <article class="detail-resto-menus">
         <h3 class="detail-article-title">The menu</h3>
